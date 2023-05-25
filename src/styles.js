@@ -1,7 +1,10 @@
 import styled from "styled-components";
+import Background from './assets/background-purple.svg'
 
 
 export const Container = styled.div`
+    background: url("${Background}");
+    background-size: cover;//estica a imagem para caber ao invez do padrao de clonar
 `;
 
 export const Image = styled.img`

@@ -1,4 +1,5 @@
 import React from "react";
+import People from './assets/people-talk.svg'
 
 import {
   Container,
@@ -13,7 +14,7 @@ import {
 function App() {
   return (
     <Container>
-      <Image/>
+      <Image alt="logo-imagem-people" src={People}/>
       <ContainerItens>
         <H1>Olá!</H1>
 
