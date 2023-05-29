@@ -22,23 +22,32 @@ function App() {
     { id: Math.random(), name: "lucas", age: "22"},
     { id: Math.random(), name: "levi", age: "19"}
   ]*/
-  const [ users, setUsers ] = useState()
+  const [ users, setUsers ] = useState([]);
+  const [ name, setName ] = useState();
+  const [ age, setAge ] = useState();
 
   function addNewUSer(){
-    setUsers([{ id: Math.random(), name: "lucas", age: "22"}])
+    setUsers([{ id: Math.random(), name, age}])
+  }
+
+  function chanheInputName(event) {
+    setName(event.target.value)
+  }
+  function chanheInputAge(event) {
+    setAge(event.target.value)
   }
 
   return (
     <Container>
       <Image alt="logo-imagem-people" src={People}/>
       <ContainerItens>
-        <H1>Olá!</H1>
+        <H1>Olá!</H1>,.
 
         <InputLabel>Nome</InputLabel>
-        <Input placeholder="Nome" />
+        <Input onChange={chanheInputName} placeholder="Nome" />
 
         <InputLabel>Idade</InputLabel>
-        <Input placeholder="Idade" />
+        <Input onChange={chanheInputAge} placeholder="Idade" />
 
         <Button onClick={addNewUSer}>
           Cadastrar<img alt="seta" src={Arrow}></img>
