@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from 'react';
 import People from './assets/people-talk.svg'
 import Arrow from './assets/arrow.svg'
 import Trash from './assets/trash.svg'
+
 
 import {
   Container,
@@ -16,10 +17,16 @@ import {
 
 function App() {
   //aqui se coloca o javascript
-  const users = [
+
+  /*const users = [
     { id: Math.random(), name: "lucas", age: "22"},
     { id: Math.random(), name: "levi", age: "19"}
-  ]
+  ]*/
+  const [ users, setUsers ] = useState()
+
+  function addNewUSer(){
+    setUsers([{ id: Math.random(), name: "lucas", age: "22"}])
+  }
 
   return (
     <Container>
@@ -33,7 +40,9 @@ function App() {
         <InputLabel>Idade</InputLabel>
         <Input placeholder="Idade" />
 
-        <Button>Cadastrar<img alt="seta" src={Arrow}></img></Button>
+        <Button onClick={addNewUSer}>
+          Cadastrar<img alt="seta" src={Arrow}></img>
+        </Button>
 
         <ul>
           {users.map((user) =>( 
