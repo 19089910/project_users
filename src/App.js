@@ -16,29 +16,7 @@ import {
 } from "./styles";
 
 function App() {
-  //aqui se coloca o javascript
-
-  /*const users = [
-    { id: Math.random(), name: "lucas", age: "22"},
-    { id: Math.random(), name: "levi", age: "19"}
-  ]*/
-  //VAVIAVIES ESTADOS
   const [users, setUsers] = useState([]);
-  /*
-  VAVIAVIES ESTADOS
-    const [ name, setName ] = useState();
-    const [ age, setAge ] = useState();
-
-  VARIAVIES ESTADOS
-    function chanheInputName(event) {
-      setName(event.target.value)
-    }
-    function chanheInputAge(event) {
-      setAge(event.target.value)
-    }
-  */
-
-  //VAVIAVIES REF
   const inputName = useRef();
   const inputAge = useRef();
 
