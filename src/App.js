@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import axios from 'axios'
 import People from './assets/people-talk.svg'
 import Arrow from './assets/arrow.svg'
 import Trash from './assets/trash.svg'
@@ -20,7 +21,9 @@ function App() {
   const inputName = useRef();
   const inputAge = useRef();
 
-  function addNewUSer() {
+  async function addNewUSer() {
+    const data = await axios.post("http://localhost:3001/users")
+  /*
     setUsers([
       ...users, 
       { 
@@ -30,7 +33,7 @@ function App() {
       },
     ]);
   }
-
+  */
   function deletUser(userId) {
     const newUsers = users.filter( user => user.id !== userId )
     setUsers(newUsers)
@@ -66,7 +69,5 @@ function App() {
     </Container>
   );
 }
-
-
 
 export default App;
