@@ -22,8 +22,13 @@ function App() {
   const inputAge = useRef();
 
   async function addNewUSer() {
-    const data = await axios.post("http://localhost:3001/users")
-  /*
+    const data = await axios.post("http://localhost:3001/users", {
+      //BODY PARAMS: ta enviando json para o back
+      name: inputName.current.value, 
+      age: inputAge.current.value,
+    });
+    console.log(data)//TEMPORARIO: PARA VER SE SALVOU NO BACK
+  /* VAMOS DELETAR ISSO:
     setUsers([
       ...users, 
       { 
@@ -32,8 +37,9 @@ function App() {
         age: inputAge.current.value 
       },
     ]);
+    */
   }
-  */
+
   function deletUser(userId) {
     const newUsers = users.filter( user => user.id !== userId )
     setUsers(newUsers)
