@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import axios from 'axios'
-import People from './assets/people-talk.svg'
-import Arrow from './assets/arrow.svg'
-import Trash from './assets/trash.svg'
+import People from '../../assets/people-talk.svg'
+import Arrow from '../../assets/arrow.svg'
+import Trash from '../../assets/trash.svg'
 
 
 import {
@@ -32,7 +32,7 @@ function App() {
 
     setUsers([...users, newUser]);//vai adicionar o new user do back and no user do front para mostara na tela
   }
-
+  //O userEffect esta responsavel pelo get na hora do reflex...
   useEffect(() => {//inicia frontend junto ao de baixo:
     async function fetchUser(){
       const { data: newUsers } = await axios.get("http://localhost:3001/users");
@@ -42,8 +42,10 @@ function App() {
   }, [])//se mudar alguma variavel aqui, vai reExecultar o de cima
 
 
-  function deletUser(userId) {
-    const newUsers = users.filter( user => user.id !== userId )
+  async function deletUser(userId) {
+    //nao tem nem um 'response' do back, entao nao precia capturar data
+    await axios.delete(`http://localhost:3001/users/${userId}`)//deleta no back (ROUTENT PARAMS)
+    const newUsers =  users.filter( user => user.id !== userId )//deleta no front
     setUsers(newUsers)
   }
 
