@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import axios from 'axios'
 import People from './assets/people-talk.svg'
 import Arrow from './assets/arrow.svg'
@@ -22,23 +22,25 @@ function App() {
   const inputAge = useRef();
 
   async function addNewUSer() {
-    const data = await axios.post("http://localhost:3001/users", {
+  // { data } == qualquer.data => e a response do back end
+  // { data : newUser} renomeado o data para new user
+    const { data : newUser} = await axios.post("http://localhost:3001/users", {
       //BODY PARAMS: ta enviando json para o back
       name: inputName.current.value, 
       age: inputAge.current.value,
     });
-    console.log(data)//TEMPORARIO: PARA VER SE SALVOU NO BACK
-  /* VAMOS DELETAR ISSO:
-    setUsers([
-      ...users, 
-      { 
-        id: Math.random(),
-        name: inputName.current.value, 
-        age: inputAge.current.value 
-      },
-    ]);
-    */
+
+    setUsers([...users, newUser]);//vai adicionar o new user do back and no user do front para mostara na tela
   }
+
+  useEffect(() => {//inicia frontend junto ao de baixo:
+    async function fetchUser(){
+      const { data: newUsers } = await axios.get("http://localhost:3001/users");
+      setUsers(newUsers)
+    }
+    fetchUser()
+  }, [])//se mudar alguma variavel aqui, vai reExecultar o de cima
+
 
   function deletUser(userId) {
     const newUsers = users.filter( user => user.id !== userId )
