@@ -30,6 +30,7 @@ function App() {
       age: inputAge.current.value,
     });
 
+
     setUsers([...users, newUser]);//vai adicionar o new user do back and no user do front para mostara na tela
   }
   //O userEffect esta responsavel pelo get na hora do reflex...
@@ -46,6 +47,7 @@ function App() {
     //nao tem nem um 'response' do back, entao nao precia capturar data
     await axios.delete(`http://localhost:3001/users/${userId}`)//deleta no back (ROUTENT PARAMS)
     const newUsers =  users.filter( user => user.id !== userId )//deleta no front
+
     setUsers(newUsers)
   }
 
