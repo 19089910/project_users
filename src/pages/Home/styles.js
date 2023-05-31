@@ -89,9 +89,11 @@ export const Input = styled.input`
 export const Button = styled.button`
     width: 342px;
     height: 74px;
+    margin-top: 130px;
 
     background: rgba(0, 0, 0, 0.8);
     border-radius: 14px;
+    border: none;
 
     font-family: 'Roboto';
     font-style: normal;
@@ -114,49 +116,5 @@ export const Button = styled.button`
     
     &:active{
         opacity: 0.5;
-    }
-`;
-
-export const User = styled.li`
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    margin-top: 20px;
-
-    background: rgba(255, 255, 255, 0.25);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 14px;
-
-    width: 342px;
-    height: 58px;
-
-    //RETIRAR PADRAO:
-    border: none;
-    outline: none;
-
-    //LETRA INTERNA:
-    padding-left: 25px;
-
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20 px;
-    line-height: 28px;
-
-    color: #FFFFFF;
-
-    p {
-        font-weight: normal;
-        font-style: normal;
-        font-size: 20;
-        line-height: 28px;
-
-        color: #FFFFFF;
-    }
-
-    button {
-        background: none;
-        border: none;
-        cursor: pointer;
     }
 `;

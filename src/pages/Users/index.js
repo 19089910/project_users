@@ -1,6 +1,6 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios'
-import People from '../../assets/people-talk.svg'
+import Avatar from '../../assets/avatar.svg'
 import Arrow from '../../assets/arrow.svg'
 import Trash from '../../assets/trash.svg'
 
@@ -10,28 +10,13 @@ import {
   H1,
   Image,
   ContainerItens,
-  InputLabel,
-  Input,
   Button,
   User,
 } from "./styles";
 
-function App() {
+function Users() {
   const [users, setUsers] = useState([]);
-  const inputName = useRef();
-  const inputAge = useRef();
 
-  async function addNewUSer() {
-  // { data } == qualquer.data => e a response do back end
-  // { data : newUser} renomeado o data para new user
-    const { data : newUser} = await axios.post("http://localhost:3001/users", {
-      //BODY PARAMS: ta enviando json para o back
-      name: inputName.current.value, 
-      age: inputAge.current.value,
-    });
-
-    setUsers([...users, newUser]);//vai adicionar o new user do back and no user do front para mostara na tela
-  }
   //O userEffect esta responsavel pelo get na hora do reflex...
   useEffect(() => {//inicia frontend junto ao de baixo:
     async function fetchUser(){
@@ -51,20 +36,9 @@ function App() {
 
   return (
     <Container>
-      <Image alt="logo-imagem-people" src={People} />
+      <Image alt="logo-imagem-people" src={Avatar} />
       <ContainerItens>
-        <H1>Olá!</H1>
-
-        <InputLabel>Nome</InputLabel>
-        <Input ref={inputName} placeholder="Nome" />
-
-        <InputLabel>Idade</InputLabel>
-        <Input ref={inputAge} placeholder="Idade" />
-
-        <Button onClick={addNewUSer}>
-          Cadastrar<img alt="seta" src={Arrow}></img>
-        </Button>
-
+        <H1>Usuários</H1>
         <ul>
           {users.map((user) => (
             <User key={user.id}>
@@ -74,10 +48,17 @@ function App() {
               </button>
             </User>
           ))}
+
         </ul>
+
+        <Button>
+        <img alt="seta" src={Arrow}></img> voltar
+        </Button>
+
+
       </ContainerItens>
     </Container>
   );
 }
 
-export default App;
+export default Users;

@@ -1,8 +1,7 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import axios from 'axios'
 import People from '../../assets/people-talk.svg'
 import Arrow from '../../assets/arrow.svg'
-import Trash from '../../assets/trash.svg'
 
 
 import {
@@ -13,10 +12,9 @@ import {
   InputLabel,
   Input,
   Button,
-  User,
 } from "./styles";
 
-function App() {
+function Home() {
   const [users, setUsers] = useState([]);
   const inputName = useRef();
   const inputAge = useRef();
@@ -29,27 +27,9 @@ function App() {
       name: inputName.current.value, 
       age: inputAge.current.value,
     });
-
-
     setUsers([...users, newUser]);//vai adicionar o new user do back and no user do front para mostara na tela
   }
-  //O userEffect esta responsavel pelo get na hora do reflex...
-  useEffect(() => {//inicia frontend junto ao de baixo:
-    async function fetchUser(){
-      const { data: newUsers } = await axios.get("http://localhost:3001/users");
-      setUsers(newUsers)
-    }
-    fetchUser()
-  }, [])//se mudar alguma variavel aqui, vai reExecultar o de cima
 
-
-  async function deletUser(userId) {
-    //nao tem nem um 'response' do back, entao nao precia capturar data
-    await axios.delete(`http://localhost:3001/users/${userId}`)//deleta no back (ROUTENT PARAMS)
-    const newUsers =  users.filter( user => user.id !== userId )//deleta no front
-
-    setUsers(newUsers)
-  }
 
   return (
     <Container>
@@ -66,20 +46,9 @@ function App() {
         <Button onClick={addNewUSer}>
           Cadastrar<img alt="seta" src={Arrow}></img>
         </Button>
-
-        <ul>
-          {users.map((user) => (
-            <User key={user.id}>
-              <p>{user.name}</p><p>{user.age}</p>
-              <button onClick={()  => deletUser(user.id)}>
-                <img alt="lata-de-lixo" src={Trash}></img>
-              </button>
-            </User>
-          ))}
-        </ul>
       </ContainerItens>
     </Container>
   );
 }
 
-export default App;
+export default Home;
