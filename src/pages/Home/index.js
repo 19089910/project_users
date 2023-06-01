@@ -3,7 +3,6 @@ import axios from 'axios'
 import People from '../../assets/people-talk.svg'
 import Arrow from '../../assets/arrow.svg'
 
-
 import {
   Container,
   H1,

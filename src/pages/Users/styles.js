@@ -114,9 +114,7 @@ export const Button = styled.button`
     justify-content: center;
     align-items: center;
     gap: 20px;
-
-
-
+    
     &:hover{
         opacity: 0.8;
     }
@@ -124,7 +122,7 @@ export const Button = styled.button`
     &:active{
         opacity: 0.5;
     }
-    
+
     img{
         transform: rotate(180deg);
     }
