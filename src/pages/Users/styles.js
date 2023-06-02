@@ -12,7 +12,8 @@ export const Container = styled.div`
     align-items: center;
     gap: 40px;
 
-  //height: 100vh;
+    height: 100%;
+     min-height: 100vh;
 `;
 
 export const Image = styled.img`
@@ -34,7 +35,8 @@ export const ContainerItens = styled.div`
     display: flex;
     flex-direction: column;
 
-    height: 100vh;
+    height: 100%;
+    min-height: calc(100vh - 170px);//para ele crecer para baixo menos o de cima
 `;
 
 export const H1 = styled.h1`

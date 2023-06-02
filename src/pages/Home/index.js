@@ -1,7 +1,9 @@
 import React, { useState, useRef } from 'react';
 import axios from 'axios'
 import People from '../../assets/people-talk.svg'
-import Arrow from '../../assets/arrow.svg'
+import Arrow from '../../assets/arrow.svg';
+import { useNavigate } from 'react-router-dom';
+
 
 import {
   Container,
@@ -18,6 +20,8 @@ function Home() {
   const inputName = useRef();
   const inputAge = useRef();
 
+  const navigate = useNavigate();
+
   async function addNewUSer() {
   // { data } == qualquer.data => e a response do back end
   // { data : newUser} renomeado o data para new user
@@ -27,6 +31,8 @@ function Home() {
       age: inputAge.current.value,
     });
     setUsers([...users, newUser]);//vai adicionar o new user do back and no user do front para mostara na tela
+
+    navigate('/usuarios')
   }
 
 
@@ -42,7 +48,7 @@ function Home() {
         <InputLabel>Idade</InputLabel>
         <Input ref={inputAge} placeholder="Idade" />
 
-        <Button to='/usuarios' onClick={addNewUSer}>
+        <Button  onClick={addNewUSer}>
           Cadastrar<img alt="seta" src={Arrow}></img>
         </Button>
 
