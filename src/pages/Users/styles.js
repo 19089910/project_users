@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Background from '../../assets/background-block.svg'
+import { Link } from 'react-router-dom';
 
 
 export const Container = styled.div`
@@ -91,7 +92,7 @@ export const User = styled.li`
         cursor: pointer;
     }
 `;
-export const Button = styled.button`
+export const Button = styled(Link)`
     width: 342px;
     height: 74px;
     margin-top: 120px;

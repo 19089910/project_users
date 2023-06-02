@@ -42,9 +42,10 @@ function Home() {
         <InputLabel>Idade</InputLabel>
         <Input ref={inputAge} placeholder="Idade" />
 
-        <Button onClick={addNewUSer}>
+        <Button to='/usuarios' onClick={addNewUSer}>
           Cadastrar<img alt="seta" src={Arrow}></img>
         </Button>
+
       </ContainerItens>
     </Container>
   );
