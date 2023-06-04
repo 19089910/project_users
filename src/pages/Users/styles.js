@@ -39,18 +39,6 @@ export const ContainerItens = styled.div`
     min-height: calc(100vh - 170px);//para ele crecer para baixo menos o de cima
 `;
 
-export const H1 = styled.h1`
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 34px;
-    line-height: 40px;
-
-    text-align: center;
-
-    color: #FFFFFF;
-`;
-
 export const User = styled.li`
     display: flex;
     align-items: center;

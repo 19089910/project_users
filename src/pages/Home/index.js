@@ -5,9 +5,9 @@ import Arrow from '../../assets/arrow.svg';
 import { useNavigate } from 'react-router-dom';
 
 
+import H1 from '../../components/Title'
 import {
   Container,
-  H1,
   Image,
   ContainerItens,
   InputLabel,
@@ -35,7 +35,8 @@ function Home() {
     navigate('/usuarios')
   }
 
-
+//<H1>Olá!</H1> => esta enviando "Olá!" para o ../..components/Title mas o <H1> nao tem que receber essa informação 
+//isso e PROPS => propriedades
   return (
     <Container>
       <Image alt="logo-imagem-people" src={People} />

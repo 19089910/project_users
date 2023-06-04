@@ -35,19 +35,6 @@ export const ContainerItens = styled.div`
     height: 100vh;
 `;
 
-export const H1 = styled.h1`
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 34px;
-    line-height: 40px;
-    margin-bottom: 50px;
-
-    text-align: center;
-
-    color: #FFFFFF;
-`;
-
 export const InputLabel = styled.p`
     font-family: 'Roboto';
     font-style: normal;

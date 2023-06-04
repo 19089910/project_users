@@ -4,10 +4,9 @@ import Avatar from '../../assets/avatar.svg'
 import Arrow from '../../assets/arrow.svg'
 import Trash from '../../assets/trash.svg'
 
-
+import H1 from '../../components/Title'
 import {
   Container,
-  H1,
   Image,
   ContainerItens,
   Button,
