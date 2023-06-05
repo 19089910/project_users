@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import Home from './pages/Home'
-import Users from "./pages/Users";
+import Home from './pages/Home';
+import Users from './pages/Users';
 
 function App(){
 //exact => e igual ao um await, para ler toda a url

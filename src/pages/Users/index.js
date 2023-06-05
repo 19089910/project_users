@@ -36,7 +36,7 @@ function Users() {
   return (
     <Container>
       <Image alt="logo-imagem-people" src={Avatar} />
-      <ContainerItens>
+      <ContainerItens polymorphism={true}>
         <H1>Usuários</H1>
         <ul>
           {users.map((user) => (
