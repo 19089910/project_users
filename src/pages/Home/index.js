@@ -1,18 +1,18 @@
 import React, { useState, useRef } from 'react';
-import axios from 'axios'
-import People from '../../assets/people-talk.svg'
+import axios from 'axios';
+import People from '../../assets/people-talk.svg';
 import Arrow from '../../assets/arrow.svg';
 import { useNavigate } from 'react-router-dom';
 
 
-import H1 from '../../components/Title'
+import H1 from '../../components/Title';
 import ContainerItens from '../../components/ConteinerItens';
+import Button from '../../components/Button';
 import {
   Container,
   Image,
   InputLabel,
   Input,
-  Button,
 } from "./styles";
 
 function Home() {
@@ -32,7 +32,7 @@ function Home() {
     });
     setUsers([...users, newUser]);//vai adicionar o new user do back and no user do front para mostara na tela
 
-    navigate('/usuarios')
+    navigate('/usuarios');
   }
 
 //<H1>Olá!</H1> => esta enviando "Olá!" para o ../..components/Title mas o <H1> nao tem que receber essa informação 
