@@ -5,10 +5,10 @@ import Arrow from '../../assets/arrow.svg'
 import Trash from '../../assets/trash.svg'
 
 import H1 from '../../components/Title'
+import ContainerItens from '../../components/ConteinerItens';
 import {
   Container,
   Image,
-  ContainerItens,
   Button,
   User,
 } from "./styles";

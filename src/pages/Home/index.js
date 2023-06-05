@@ -6,10 +6,10 @@ import { useNavigate } from 'react-router-dom';
 
 
 import H1 from '../../components/Title'
+import ContainerItens from '../../components/ConteinerItens';
 import {
   Container,
   Image,
-  ContainerItens,
   InputLabel,
   Input,
   Button,
