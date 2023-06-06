@@ -1,9 +1,9 @@
 import React from "react";
 import { Button as ContainerButton } from './styles'
-
-function Button({ children }){
+//spread operaitor: vai capturar todos os PROPS e atribui-los a variavel props assim so repassando todas as propriedades html
+function Button({ children, ...props}){
     return(
-        <ContainerButton>{ children }</ContainerButton>
+        <ContainerButton { ...props} >{ children }</ContainerButton>
     )
 };
 

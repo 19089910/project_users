@@ -50,7 +50,7 @@ function Users() {
 
         </ul>
 
-        <Button to="/">
+        <Button to="/" isBack={true}>
         <img alt="seta" src={Arrow}></img> voltar
         </Button>
 
